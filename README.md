@@ -1,15 +1,40 @@
-# mf4-to-csv-converter
+# MF4 to CSV Converter
 
-⚠️ Note: Due to confidentiality, sample .mf4 data is not included.
+This script batch converts `.mf4` files to `.csv` using the `asammdf` library.
 
-This script was built to automate the conversion of MDF4 files (used in automotive measurement systems) to CSV using the `asammdf` Python library.
+---
 
-## Usage
+## 📂 Folder Structure
+
+```
+project-folder/
+├── convert_mf4_to_csv.py
+├── mf4_files/          # Put your .mf4 files here
+└── mf4_to_csv/         # Output folder (auto-created)
+```
+
+---
+
+## 🚀 How to Use
+
 1. Install the required library:
-pip install asammdf
+   ```bash
+   pip install asammdf
+   ```
 
-2. Run the script:
-python convert_mf4_to_csv.py
+2. Add `.mf4` files to `mf4_files/`.
 
+3. Run the script:
+   ```bash
+   python convert_mf4_to_csv.py
+   ```
 
-Make sure your `.mf4` file is in the same folder. Output will be saved as `output.csv`.
+4. Converted `.csv` files will appear in `mf4_to_csv/`.
+
+---
+
+## 🛠️ Future Improvements
+
+- [ ] Add support for specific signal filtering
+- [ ] Option to select custom input/output folders
+- [ ] Add logging and progress bar
