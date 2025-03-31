@@ -1,8 +1,13 @@
 # 🛠️ MF4 Signal Extraction Playground
 
 This repo was a sandbox to test .mf4 signal extraction with asammdf. 
-It’s no longer actively maintained due to performance limitations on large datasets.
+It’s no longer actively maintained due to performance limitations on large datasets. 
 
+Future work will focus on:
+- Direct .mf4 analysis in Python
+- Signal-level tools like CSV Analyzer or Battery IR Calculator
+
+---
 
 # 📁 MF4 to CSV Converter (Signal-Filtered)
 
