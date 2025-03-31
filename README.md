@@ -1,3 +1,9 @@
+# 🛠️ MF4 Signal Extraction Playground
+
+This repo was a sandbox to test .mf4 signal extraction with asammdf. 
+It’s no longer actively maintained due to performance limitations on large datasets.
+
+
 # 📁 MF4 to CSV Converter (Signal-Filtered)
 
 This Python script extracts selected signals from `.mf4` log files and converts them to `.csv`, using the `asammdf` library. 
