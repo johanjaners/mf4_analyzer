@@ -1,5 +1,5 @@
 # 🛠️ MF4 Signal Extraction Playground
-
+> ⚠️ **Archived Project** — This repository is no longer actively maintained.
 This repo was a sandbox to test .mf4 signal extraction with asammdf. 
 It’s no longer actively maintained due to performance limitations on large datasets. 
 
