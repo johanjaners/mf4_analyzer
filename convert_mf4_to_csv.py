@@ -6,13 +6,15 @@ from tqdm import tqdm
 # Toggle logging and progress bar
 use_logging = True
 
+# Use current folder for input files
+input_dir = "."  # Use current folder for .mf4 files (default)
+# input_dir = "mf4_files"  # Optional: Uncomment to use a subfolder
+
+output_dir = "mf4_to_csv"  # 📂 Output folder
+
 # Setup logging if enabled
 if use_logging:
     logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
-
-# Define folders
-input_dir = "mf4_files"
-output_dir = "mf4_to_csv"  # 📂 Output folder
 
 # Create output folder if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
