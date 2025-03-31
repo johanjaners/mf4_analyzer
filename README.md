@@ -1,74 +1,62 @@
-# MF4 to CSV Converter (with Logging + Progress Bar)
+# 📁 MF4 to CSV Converter (Signal-Filtered)
 
-This Python script converts all `.mf4` files in the **current folder** into `.csv` format using the `asammdf` library.  
-It includes optional logging and a progress bar via `tqdm`.
+This Python script extracts selected signals from `.mf4` log files and converts them to `.csv`, using the `asammdf` library. 
+It is optimized for smaller exports by **filtering only the desired signals**, improving performance and avoiding memory issues.
 
 ---
 
-## 📁 Folder Setup
+## ✅ Features
+- Convert `.mf4` → `.csv` for **selected signals only**
+- Lightweight & memory-safe compared to full export
+- Logging & progress bar included
+- Placeholder signal names (can be customized)
 
-You can either:
+---
 
-### ✅ Option 1 — Current folder
-```
-your-folder/
-├── mf4_to_csv_with_logging.py
-├── file1.mf4
-├── file2.mf4
-└── mf4_to_csv/        # Output folder (auto-created)
-```
-
-### 📂 Option 2 — Subfolder setup (Optional)
-```
-your-folder/
-├── mf4_to_csv_with_logging.py
-├── mf4_files/
-│   ├── file1.mf4
-│   └── file2.mf4
-└── mf4_to_csv/        # Output folder (auto-created)
-```
-
-> 🔁 To use Option 2, just uncomment `input_dir = "mf4_files"` in the script.
+## 🔧 Example Use Case
+You're analyzing electric vehicle data and want to extract specific measurements like `Voltage`, `Current`, and `Temperature` to:
+- Calculate **internal resistance**
+- Compare signal patterns across test logs
+- Use output `.csv` in ML pipelines or external tools
 
 ---
 
 ## 🚀 How to Use
 
-1. Install required libraries:
+1. **Install required packages**:
    ```bash
-   pip install asammdf tqdm
+   pip install asammdf pandas tqdm
    ```
 
-2. Place your `.mf4` files in the **same folder as the script** *(or in `mf4_files/` if using Option 2)*.
+2. **Place `.mf4` files** in the same folder as the script *(or set a different input folder)*.
 
-3. Run the script:
+3. **Edit `signals_to_export`** in the script:
+   ```python
+   signals_to_export = ["Voltage1", "CurrentSensor", "PackTemp"]
+   ```
+   > Keep placeholder names (`Signal1`, etc.) if pushing to public repos.
+
+4. **Run the script**:
    ```bash
-   python mf4_to_csv_with_logging.py
+   python convert_mf4_to_csv.py
    ```
 
-4. Your `.csv` files will appear in the `mf4_to_csv/` folder.
-
----
-
-## 🔧 Features
-
-- ✅ Converts all `.mf4` files in the folder
-- ✅ Creates `.csv` files with the same names
-- ✅ Auto-creates output folder if it doesn’t exist
-- ✅ Logs progress and shows a terminal progress bar
+5. **Check `mf4_to_csv/` folder** for the exported `.csv` files.
 
 ---
 
 ## 🧠 Notes
-
-- Toggle logging with the `use_logging` variable at the top of the script.
-- Adjust `input_dir` if you want to use a separate folder.
-- All `.csv` files go to `mf4_to_csv/`.
+- You can modify the signal list to match your own measurement channels.
+- Files with no matching signals will be **skipped safely**.
+- The `.csv` output is kept minimal by exporting only specifed signals.
 
 ---
 
-## 🔮 Future Ideas
+## 🧭 About This Project
+This project lays a foundation for future tools such as:
 
-- [ ] Add command-line arguments for flexibility
-- [ ] Allow filtering of specific signals
-- [ ] Export logs to file
+- A **CSV Analyzer** for signal trends
+- Integrated **battery resistance calculators**
+- or even **ML-ready feature extractors**
+
+---
