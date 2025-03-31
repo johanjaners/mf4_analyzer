@@ -9,7 +9,7 @@ It includes optional logging and a progress bar via `tqdm`.
 
 You can either:
 
-### ✅ Option 1 — Minimal setup (Recommended)
+### ✅ Option 1 — Current folder
 ```
 your-folder/
 ├── mf4_to_csv_with_logging.py
