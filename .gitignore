@@ -1,3 +1,20 @@
+# Ignore raw data and exports
 *.mf4
 *.csv
+
+# Ignore folders (optional if used)
+mf4_files/
+mf4_to_csv/
 sample_data/
+
+# Ignore Python bytecode and IDE clutter
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.env
+
+# VS Code / IDE folders (optional)
+.vscode/
+.idea/
