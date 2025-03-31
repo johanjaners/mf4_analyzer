@@ -9,7 +9,6 @@ input_dir = "."                                    # Folder with .mf4 files (def
 output_dir = "mf4_to_csv"                         # Output folder for .csv files (auto-created)
 
 # ✨ Signal filter — update with your desired signal names (e.g. voltage, current)
-# For GitHub and public repos, use placeholders to avoid exposing proprietary names.
 signals_to_export = ["Signal1", "Signal2", "Signal3"]  # Replace locally for real use
 
 # ✅ Logging setup
