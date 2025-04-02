@@ -7,7 +7,7 @@ A lightweight Python script for analyzing `.mf4` measurement files. Designed for
 ## ✨ Features
 
 - 📂 Auto-loads the latest `.mf4` file in the folder  
-- 🔎 Filters signals by keyword (e.g., `"HvBatt"`)  
+- 🔎 Filters signals by keyword (e.g., `"Voltage", "Sensor"`)  
 - ℹ️ Displays:
   - Signal name  
   - Unit  
@@ -32,8 +32,8 @@ pip install asammdf matplotlib numpy
 1. Place `.mf4` file(s) in the same folder as the script.
 2. Edit the top of `mf4_analyzer.py` to match your target signal:
    ```python
-   filter_keyword = "HvBatt"
-   plot_signal = "HvBattIDc"
+   filter_keyword = "YourKeywordHere"
+   plot_signal = "ExampleSignal123"
    ```
 3. Run the script:
    ```bash
