@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 # === SETTINGS ===
 input_dir = "."
-filter_keyword = "HvBatt"  # Filter signals by this keyword
-plot_signal = "HvBattIDc8004P"  # Signal to plot
+filter_keyword = "YourKeywordHere"  # Filter signals by this keyword
+plot_signal = "ExampleSignal123"  # Signal to plot
 
 mf4_files = [f for f in os.listdir(input_dir) if f.lower().endswith(".mf4")]
 if not mf4_files:
