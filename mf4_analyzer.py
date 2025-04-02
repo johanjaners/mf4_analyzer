@@ -1,3 +1,26 @@
+# mf4_analyzer.py
+
+"""
+MF4 Signal Analyzer 📊
+
+Loads and analyzes the latest `.mf4` log file in the directory,
+filters signals by keyword, prints signal metadata,
+and plots a selected signal for quick inspection.
+
+Features:
+- Auto-detects latest .mf4 file
+- Filters signal names by keyword
+- Prints unit, sample count, min/max values
+- Plots selected signal over time
+
+Usage:
+    Set `filter_keyword` and `plot_signal` in the SETTINGS section,
+    then run the script.
+
+Author: J2 (GitHub: johanjaners)
+Version: 1.0.0
+"""
+
 import os
 from asammdf import MDF
 import numpy as np
