@@ -33,7 +33,7 @@ pip install asammdf matplotlib numpy
 2. Edit the top of `mf4_analyzer.py` to match your target signal:
    ```python
    filter_keyword = "HvBatt"
-   plot_signal = "HvBattIDc8004P"
+   plot_signal = "HvBattIDc"
    ```
 3. Run the script:
    ```bash
