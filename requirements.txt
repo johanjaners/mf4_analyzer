@@ -1,0 +1,17 @@
+asammdf==8.2.9
+attrs==25.3.0
+canmatrix==1.2
+click==8.1.8
+colorama==0.4.6
+isal==1.7.2
+lxml==5.3.2
+lz4==4.4.4
+numexpr==2.10.2
+numpy==2.2.4
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six==1.17.0
+typing_extensions==4.13.1
+tzdata==2025.2
+matplotlib==3.8.3
