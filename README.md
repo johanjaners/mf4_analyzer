@@ -1,7 +1,7 @@
 # 🔍 mf4_analyzer
 
 A lightweight, modular Python tool for analyzing `.mf4` log files.  
-Optimized for EV battery test data and fast signal filtering, visualization, and metadata reporting.
+Designed for handling of EV battery test data through signal filtering, visualization, and metadata reporting.
 
 ---
 
