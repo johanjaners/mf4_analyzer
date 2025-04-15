@@ -9,11 +9,10 @@ Designed for handling of EV battery test data through signal filtering, visualiz
 
 📂 Auto-loads the latest `.mf4` file  
 🔎 Keyword-based filtering using `DEFAULT_KEYWORDS`  
-🧠 Signal mapping by keyword (e.g. battery, voltage, temperature)
-📈 Plotting of signals with accurate time axis
-ℹ️ Metadata summary: name, unit, sample count, min/max values  
-📁 Export of tables/plots to `/output/` folder  
-🚫 `.gitignore` support to exclude unwanted files
+🧠 Signal mapping by keyword (e.g. battery, voltage, temperature)  
+📈 Plotting of signals with accurate time axis  
+ℹ️ Metadata summary: name, unit, sample count, min/max values 
+🚫 `.gitignore` support to exclude unwanted files  
 
 ---
 
