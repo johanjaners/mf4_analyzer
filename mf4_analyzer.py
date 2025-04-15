@@ -3,8 +3,8 @@
 """
 🔍 MF4 Analyzer – Version 1.1.0
 
-A lightweight, modular Python tool for analyzing `.mf4` log files.  
-Optimized for EV battery test data and fast signal filtering, visualization, and metadata reporting.
+A lightweight, modular Python tool for analyzing .mf4 log files.
+Designed for handling of EV battery test data through signal filtering, visualization, and metadata reporting.
 
 Features:
 - Auto-loads latest `.mf4` file
