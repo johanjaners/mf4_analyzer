@@ -9,8 +9,8 @@ Designed for handling of EV battery test data through signal filtering, visualiz
 
 📂 Auto-loads the latest `.mf4` file  
 🔎 Keyword-based filtering using `DEFAULT_KEYWORDS`  
-🧠 Signal mapping for battery, current, cell voltage, module temp, etc.  
-📈 Clean plotting with accurate time axis  
+🧠 Signal mapping by keyword (e.g. battery, voltage, temperature)
+📈 Plotting of signals with accurate time axis  
 ℹ️ Metadata summary: name, unit, sample count, min/max values  
 📁 Export of tables/plots to `/output/` folder  
 🚫 `.gitignore` support to exclude unwanted files
@@ -39,12 +39,13 @@ python mf4_analyzer.py
 
 ---
 
-## 💡 Planned Features
+## 💡 Potential Features
 
-- Export filtered signals to `.csv`  
+- Optional export of filtered signals (e.g., `.csv`)  
+- Export of signal metadata, plots, and tables to `/output/` folder  
+- CLI arguments for filtering and plotting  
 - Multi-signal plotting  
-- CLI arguments (e.g., `--plot "SignalName"`, `--filter "Keyword"`)  
-- Signal metadata export to file
+- Automated report generation
 
 ---
 
