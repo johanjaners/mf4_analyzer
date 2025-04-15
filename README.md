@@ -11,7 +11,7 @@ Designed for handling of EV battery test data through signal filtering, visualiz
 🔎 Keyword-based filtering using `DEFAULT_KEYWORDS`  
 🧠 Signal mapping by keyword (e.g. battery, voltage, temperature)  
 📈 Plotting of signals with accurate time axis  
-ℹ️ Metadata summary: name, unit, sample count, min/max values 
+ℹ️ Metadata summary: name, unit, sample count, min/max values  
 🚫 `.gitignore` support to exclude unwanted files  
 
 ---
