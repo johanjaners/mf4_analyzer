@@ -38,7 +38,7 @@ KEYWORD_MAP = {
     "battery": "batt",
     "pack current": "current",
     "cell voltage": "voltage",
-    "module tab temp": "temperature"
+    "module temperature": "temperature"
 }
 
 DEFAULT_KEYWORDS = list(KEYWORD_MAP.keys())
