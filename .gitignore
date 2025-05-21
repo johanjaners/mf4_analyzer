@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment
+venv/
+.env
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Windows OS files
+Thumbs.db
+
+# Data files
+*.mf4
+*.log
+
+# exports
+mf4_exports/
+
+# Jupyter
+.ipynb_checkpoints/
