@@ -1,3 +1,20 @@
+"""
+mf4_analyzer.py
+
+Tool for extracting performance KPIs from EV battery test data in .mf4 log files.
+
+Features:
+- Signal extraction and derived metric computation
+- PDF report generation with plots and summary
+- JSON export of signal metadata
+
+Input:  latest .mf4 file in ./mf4_logfiles
+Output: PDF, PNG, and JSON files in ./mf4_exports
+
+Version: 2.0.0
+Author: Johan Janérs
+"""
+
 # === Imports ===
 # Standard libraries for file handling, math, plotting, and PDF export
 import os

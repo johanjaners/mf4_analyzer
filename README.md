@@ -1,60 +1,90 @@
 # 🔍 mf4_analyzer
 
-A lightweight, modular Python tool for analyzing `.mf4` log files.  
-Designed for handling of EV battery test data through signal filtering, visualization, and metadata reporting.
+A Python tool for performance analysis of EV battery test data — focused on extracting key KPIs from `.mf4` log files.  
+Transforms raw log data into plots, metrics, and PDF reports using predefined signal mappings and derived calculations.
 
 ---
 
 ## ✨ Features
 
-📂 Auto-loads the latest `.mf4` file  
-🔎 Keyword-based filtering using `DEFAULT_KEYWORDS`  
-🧠 Signal mapping by keyword (e.g. battery, voltage, temperature)  
-📈 Plotting of signals with accurate time axis  
-ℹ️ Metadata summary: name, unit, sample count, min/max values  
-🚫 `.gitignore` support to exclude unwanted files  
+- 📂 **Auto-loads** the latest `.mf4` file from the specified directory  
+- 🔑 **Keyword-based signal mapping** using `KEYWORD_MAP` for structured analysis  
+- 🧠 **Derived metric calculations** (e.g., delta voltages, temperature differentials, SoC ranges)  
+- 📈 **Time-aligned plotting** of signals with optional dual-axis views  
+- 📄 **PDF report generation** with summary metrics and embedded plots  
+- 🗃️ **JSON export** of signal metadata for inspection or reuse  
+- 🧪 **Discharge mode detection** (based on SoC trend) for context-sensitive output  
 
 ---
 
 ## 📦 Requirements
 
 Install dependencies:
+
 ```bash
 pip install -r requirements.txt
-```
+🚀 How to Use
+Place one or more .mf4 files in the ./mf4_logfiles directory
 
----
+Run the script:
 
-## 🚀 How to Use
-
-1. Place one or more `.mf4` files in the project folder  
-2. Optionally edit `DEFAULT_KEYWORDS` in `mf4_analyzer.py` to match your signal targets  
-3. Run the analyzer:
-```bash
+bash
+Kopiera
+Redigera
 python mf4_analyzer.py
-```
-4. View signal metadata in terminal  
-5. Selected signals will be plotted in a separate window
+Outputs will be generated in the ./mf4_exports directory:
 
----
+📄 PDF report: *_mf4_analysis_report.pdf
 
-## 💡 Potential Features
+🖼️ Signal plots: *.png files grouped by signal category
 
-- Optional export of filtered signals (e.g., `.csv`)  
-- Export of signal metadata, plots, and tables to `/output/` folder  
-- CLI arguments for filtering and plotting  
-- Multi-signal plotting  
-- Automated report generation
+🗃️ Signal metadata: *_signal_summary.json
 
----
+📊 Signal Mapping & Derived Metrics
+Signals are mapped using a structured keyword system defined in KEYWORD_MAP:
 
-## 🗂 Version History
+Current: PackCurrent, ChargeCurrentLimit
 
-**v1.1.0** – Keyword mapping, filtering system, cleanup, new structure  
-**v1.0.0** – Initial release: signal summary, filtering, plotting
+Power: PackVoltage * PackCurrent, DischargePowerLimit, ChargePowerLimit
 
----
+Cell Voltage: CellVoltageMax, CellVoltageMin, CellVoltageMax - CellVoltageMin
 
-## 📘 License
+Temperature: CellTempMax, CellTempMin, CoolantInletTemp
 
+Temperature Delta: CellTempMax - CellTempMin, CellTempMax - CoolantInletTemp
+
+SoC: StateOfCharge, CellSocMin, CellSocMax
+
+Delta SoC: CellSocMax - CellSocMin
+
+Fault Flags: SystemFaultIndicator
+
+Derived metrics are calculated using aligned timestamps to ensure accurate comparisons and trend insights.
+
+📁 Output Structure
+All outputs are saved in the ./mf4_exports directory:
+
+PDF Reports: Complete analysis summary with bullet metrics, tabulated values, and embedded signal plots
+
+PNG Plots: Individual signal group plots using dual axes where appropriate
+
+JSON Summary: Cleaned metadata for each signal including min, max, unit, and delta values
+
+🛠 Roadmap
+Future updates may include:
+
+Modular structure with CLI support
+
+Export to CSV or other raw formats
+
+Integration with dashboards or web interfaces
+
+More flexible signal configuration or presets
+
+🗂 Version History
+v2.0.0 – Adds derived metric support, PDF generation, JSON metadata export
+v1.1.0 – Introduced keyword mapping and filtering system
+v1.0.0 – Basic signal summary and plotting
+
+📘 License
 MIT License – use freely, credit appreciated 🙌
