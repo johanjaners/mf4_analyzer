@@ -1,6 +1,6 @@
 """
 mf4_analyzer.py
- 
+
 Tool for extracting performance KPIs from EV battery test data in .mf4 log files.
 
 Features:
