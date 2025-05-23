@@ -16,3 +16,4 @@ typing_extensions
 tzdata
 matplotlib
 fpdf2
+ 

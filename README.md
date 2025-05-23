@@ -6,7 +6,7 @@ Transforms raw log data into plots, metrics, and PDF reports using predefined si
 ---
 
 ## ✨ Features
-
+ 
 - 📂 **Auto-loads** the latest `.mf4` file from the specified directory  
 - 🔑 **Keyword-based signal mapping** using `KEYWORD_MAP` for structured analysis  
 - 🧠 **Derived metric calculations** (e.g., delta voltages, temperature differentials, SoC ranges)  
