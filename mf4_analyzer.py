@@ -31,7 +31,7 @@ INPUT_DIR = "./mf4_logfiles"
 EXPORT_DIR = "./mf4_exports"
 os.makedirs(EXPORT_DIR, exist_ok=True)
 
-# === Signal groups mapped to signal names (including derived signals) ===
+# === Keyword mapped to signal names (including derived signals) ===
 # Structure used to extract and categorize signals and derived metrics
 KEYWORD_MAP = {
     "Current": ["PackCurrent", "ChargeCurrentLimit"],
