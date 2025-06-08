@@ -1,7 +1,7 @@
 # 🔍 mf4_analyzer
 
-A Python-based processing pipeline for performance analysis of EV system logs.  
-Processes `.mf4` files to compute key performance indicators (KPIs), generate visualizations, and export structured reports for data-driven engineering workflows. 
+A Python-based pipeline for performance analysis of EV system logs and data-driven engineering workflows.
+Processes `.mf4` files to compute key performance indicators (KPIs), generate structured reports and metadata exports.
 Planned extensions include CSV export and SQL pipeline for structured storage and database integration.
 
 ---
@@ -30,14 +30,19 @@ pip install -r requirements.txt
 
 ## 🚀 How to Use
 
-1. Place one or more `.mf4` files in the `./mf4_logfiles` directory
+1. Place one or more `.mf4` files in the `./mf4_logfiles/` directory
 2. Run the script:
 
    ```bash
    python mf4_analyzer.py
    ```
+   To run the included demo:
 
-3. Outputs will be generated in the `./mf4_exports` directory:
+   ```bash
+   python mf4_analyzer.py --demo
+   ```
+
+4. Outputs will be generated in the `./mf4_exports` directory:
    - PDF report: `*_mf4_analysis_report.pdf`
    - Signal plots: `*.png` files grouped by signal category
    - Signal metadata: `*_signal_summary.json`
