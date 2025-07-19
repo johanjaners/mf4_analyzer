@@ -7,11 +7,12 @@ Features:
 - Signal extraction and derived metric computation
 - PDF report generation with plots and summary
 - JSON export of signal metadata
+- Demo mode
 
 Input:  latest .mf4 file in ./mf4_logfiles
 Output: PDF, PNG, and JSON files in ./mf4_exports
 
-Version: 2.0.0
+Version: 2.0.2
 Author: Johan Janérs
 """
 
@@ -24,6 +25,9 @@ import json
 from asammdf import MDF
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
+import argparse
+import os
+import shutil
 
 # === Paths ===
 # Directory paths for input and output
@@ -357,4 +361,18 @@ def main():
 
 # === Entry point ===
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--demo", action="store_true", help="Run using demo file")
+    args = parser.parse_args()
+
+    if args.demo:
+        # Ensure mf4_logfiles folder exists
+        os.makedirs("mf4_logfiles", exist_ok=True)
+        # Copy demo file into mf4_logfiles so the normal pipeline can find it
+        shutil.copy(
+            os.path.join("demo", "mf4_demo.mf4"),
+            os.path.join("mf4_logfiles", "mf4_demo.mf4")
+        )
+        print("[INFO] Demo mode: copied demo file into mf4_logfiles/")
+
     main()
