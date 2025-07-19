@@ -2,7 +2,7 @@
 
 A Python-based pipeline for performance analysis of EV system logs and data-driven engineering workflows.
 Processes `.mf4` files to compute key performance indicators (KPIs), generate structured reports and metadata exports.
-Planned extensions include CSV export and SQL pipeline for structured storage and database integration.
+Planned extensions include CSV export and SQL pipeline for structured database.
 
 ---
 
@@ -15,6 +15,19 @@ Planned extensions include CSV export and SQL pipeline for structured storage an
 - PDF report with summary metrics and embedded plots  
 - JSON metadata export (min, max, unit, delta)  
 - Discharge mode detection (based on SoC trend)
+
+---
+
+## 🌟 Demo File
+
+A demo log file is included for quick validation of functionality. The file has been sanitized to remove any sensitive or proprietary data.
+
+```bash
+python mf4_analyzer.py --demo
+```
+
+- Input: `./demo/mf4_demo.mf4`  
+- Output: `./demo/mf4_demo_mf4_analysis_report.pdf`
 
 ---
 
@@ -78,19 +91,6 @@ Derived metrics are calculated using aligned timestamps to ensure accurate compa
 │   ├── mf4_demo.mf4              # Example sanitized log file
 │   └── mf4_demo_mf4_analysis_report.pdf   # Example output report
 ```
-
----
-
-## 🌟 Demo File
-
-A demo log file is included for quick validation of functionality. The file has been sanitized to remove any sensitive or proprietary data.
-
-```bash
-python mf4_analyzer.py --demo
-```
-
-- Input: `./demo/mf4_demo.mf4`  
-- Output: `./demo/mf4_demo_mf4_analysis_report.pdf`
 
 ---
 
