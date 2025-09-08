@@ -1,119 +1,105 @@
-# 🔍 mf4_analyzer
+# 🔍 mf4\_analyzer
 
 A Python-based pipeline for performance analysis of EV system logs and data-driven engineering workflows.
-Processes `.mf4` files to compute key performance indicators (KPIs), generate structured reports and metadata exports.
-Planned extensions include CSV export and SQL pipeline for structured storage and database integration.
+Processes `.mf4` files to compute key performance indicators (KPIs), generate structured reports (PDF) and CSV exports.
+Now supports a modular CLI, extended KPIs, and demo mode with a sanitized log.
 
 ---
 
-## ✨ Features
+## ✨ Features (v2.2.0)
 
-- Loads latest `.mf4` log file from specified directory  
-- Keyword-based signal mapping using `KEYWORD_MAP`  
-- Derived metric calculations (e.g. delta voltages, temp differentials, SoC delta)  
-- Time-aligned plotting with optional dual-axis views  
-- PDF report with summary metrics and embedded plots  
-- JSON metadata export (min, max, unit, delta)  
-- Discharge mode detection (based on SoC trend)
+* Loads latest `.mf4` log file from `./mf4_logfiles/`
+* Modular CLI structure
+* Keyword-based signal mapping via `KEYWORD_MAP`
+* Derived metric calculations:
 
----
+  * Power KPIs (RMS, Avg)
+  * Charge KPIs (time, Avg, SoC-based metrics)
+  * Discharge KPIs (time, SoC-based metrics)
+  * Voltage & Temperature deltas
+* Outputs:
 
-## 📆 Requirements
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+  * **PDF report** with plots + summary
+  * **CSV file** with KPIs
+* Demo mode with sanitized log (`mf4_logfiles/mf4_demo.mf4`)
 
 ---
 
-## 🚀 How to Use
+## 🚀 Quickstart
 
-1. Place one or more `.mf4` files in the `./mf4_logfiles/` directory
-2. Run the script:
+1. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Place one or more `.mf4` files in the `./mf4_logfiles/` folder.
+
+3. Run the analyzer:
 
    ```bash
    python mf4_analyzer.py
    ```
-   To run the included demo:
 
-   ```bash
-   python mf4_analyzer.py --demo
-   ```
+4. Outputs will be created in `./mf4_exports/`:
 
-4. Outputs will be generated in the `./mf4_exports` directory:
-   - PDF report: `*_mf4_analysis_report.pdf`
-   - Signal plots: `*.png` files grouped by signal category
-   - Signal metadata: `*_signal_summary.json`
+   * PDF report (`*_mf4_analysis_report.pdf`)
+   * CSV KPIs (`*_metrics.csv`)
+   * Signal plots (`*.png` grouped by category)
 
----
+### Run Demo
 
-## 🩹 Signal Mapping & Derived Metrics
-
-Signals are mapped using a structured keyword system defined in `KEYWORD_MAP`:
-
-- Current: `PackCurrent`, `ChargeCurrentLimit`
-- Power: `PackVoltage * PackCurrent`, `DischargePowerLimit`, `ChargePowerLimit`
-- Cell Voltage: `CellVoltageMax`, `CellVoltageMin`, `CellVoltageMax - CellVoltageMin`
-- Temperature: `CellTempMax`, `CellTempMin`
-- Temperature Delta: `CellTempMax - CellTempMin`
-- SoC: `StateOfCharge`, `CellSocMin`, `CellSocMax`
-- Delta SoC: `CellSocMax - CellSocMin`
-- Fault Flags: `SystemFaultIndicator`
-
-Derived metrics are calculated using aligned timestamps to ensure accurate comparisons and trend insights.
-
----
-
-## 📁 File Structure
-
-```plaintext
-.
-├── mf4_analyzer.py
-├── requirements.txt
-├── /mf4_logfiles/                # Input directory for .mf4 files
-├── /mf4_exports/                 # Output directory for reports and plots
-├── /demo/
-│   ├── mf4_demo.mf4              # Example sanitized log file
-│   └── mf4_demo_mf4_analysis_report.pdf   # Example output report
-```
-
----
-
-## 🌟 Demo File
-
-A demo log file is included for quick validation of functionality. The file has been sanitized to remove any sensitive or proprietary data.
+A sanitized demo file is included for validation:
 
 ```bash
-python mf4_analyzer.py --demo
+python mf4_analyzer.py
 ```
 
-- Input: `./demo/mf4_demo.mf4`  
-- Output: `./demo/mf4_demo_mf4_analysis_report.pdf`
+---
+
+## 📁 Repository Structure
+
+```plaintext
+mf4_analyzer.py
+requirements.txt
+.gitignore
+README.md
+mf4_analyzer_modular/
+ ├── compute_metrics.py
+ ├── mdf_loader.py
+ ├── metrics_list.py
+ ├── pdf_exporter.py
+ ├── plotter_exporter.py
+ ├── signal_config.py         # excluded in public distribution
+ ├── signal_extractor.py
+ └── summary_generator.py
+mf4_logfiles/
+ └── mf4_demo.mf4             # sanitized demo file
+mf4_exports/                  # auto-created for reports/plots
+```
 
 ---
 
 ## 🛠️ Roadmap
 
-- v2.1 → Modular CLI structure
-- v2.2 → CSV export
-- v2.3 → SQL pipeline integration
-- v3.0 → Batch processing with config flags
-- v3.1 → Dashboard interface or integration (Power BI, Tableau)
-- v3.2 → KPI profiles for specific test cases
+* v3.0 → SQL pipeline
+* v3.1 → Batch processing with config flags
+* v3.2 → Dashboard interface (Power BI/Tableau)
+* v3.3 → API
 
 ---
 
 ## 📘 Version History
 
-- v2.0.1 – Added demo file, directory structure, roadmap alignment  
-- v2.0.0 – Added PDF/JSON output, derived metrics  
-- v1.1.0 – Signal keyword system  
-- v1.0.0 – Initial version with basic plot and report
+* **v2.2.0** – Modular CLI, CSV export, Power/Charge/Discharge KPIs
+* **v2.0.2** – Demo mode, handling improvements, README update
+* **v2.0.1** – Demo mode, roadmap, structural upgrades
+* **v2.0.0** – PDF/JSON outputs, derived metrics
+* **v1.1.0** – Signal keyword system
+* **v1.0.0** – Initial version (basic plot + report)
 
 ---
 
 ## 📜 License
 
-MIT License – use freely, credit appreciated 🙌
+MIT License – free to use, modify, and distribute. Credit appreciated 🙌
