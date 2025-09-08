@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment
+venv/
+.env
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Windows OS files
+Thumbs.db
+
+# Data files
+*.log
+*.dat
+# Ignore all .mf4, except the sanitized demo
+*.mf4
+!mf4_logfiles/mf4_demo.mf4
+
+
+# Signal configuration files
+mf4_analyzer_modular/signal_config.py
+
+# exports
+mf4_exports/
+
+# Jupyter
+.ipynb_checkpoints/
