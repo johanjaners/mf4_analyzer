@@ -10,7 +10,7 @@ Now supports a modular CLI, extended KPIs, and demo mode with a sanitized log.
 
 * Loads latest `.mf4` log file from `./mf4_logfiles/`
 * Modular CLI structure
-* Keyword-based signal mapping via `KEYWORD_MAP`
+* Configurable signal mapping and derived metrics
 * Derived metric calculations:
 
   * Power KPIs (RMS, Avg)
