@@ -21,7 +21,6 @@ Now supports a modular CLI, extended KPIs, and demo mode with a sanitized log.
 
   * **PDF report** with plots + summary
   * **CSV file** with KPIs
-* Demo mode with sanitized log (`mf4_logfiles/mf4_demo.mf4`)
 
 ---
 
@@ -47,14 +46,6 @@ Now supports a modular CLI, extended KPIs, and demo mode with a sanitized log.
    * CSV KPIs (`*_metrics.csv`)
    * Signal plots (`*.png` grouped by category)
 
-### Run Demo
-
-A sanitized demo file is included for validation:
-
-```bash
-python mf4_analyzer.py
-```
-
 ---
 
 ## 📁 Repository Structure
@@ -73,8 +64,7 @@ mf4_analyzer_modular/
  ├── signal_config.py         # excluded in public distribution
  ├── signal_extractor.py
  └── summary_generator.py
-mf4_logfiles/
- └── mf4_demo.mf4             # sanitized demo file
+mf4_logfiles/                 # place your .mf4/.dat log file here
 mf4_exports/                  # auto-created for reports/plots
 ```
 
