@@ -2,7 +2,7 @@
 
 A Python-based pipeline for performance analysis of EV system logs and data-driven engineering workflows.
 Processes `.mf4` files to compute key performance indicators (KPIs), generate structured reports (PDF) and CSV exports.
-Now supports a modular CLI, extended KPIs, and demo mode with a sanitized log.
+Now supports a modular CLI and extended KPIs.
 
 ---
 
