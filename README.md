@@ -61,7 +61,7 @@ mf4_analyzer_modular/
  ├── metrics_list.py
  ├── pdf_exporter.py
  ├── plotter_exporter.py
- ├── signal_config.py         # excluded in public distribution
+ ├── signal_config.py         # excluded in public release
  ├── signal_extractor.py
  └── summary_generator.py
 mf4_logfiles/                 # place your .mf4/.dat log file here
